@@ -1,15 +1,10 @@
 import { initTRPC } from '@trpc/server'
 import { z } from 'zod'
-
-const t = initTRPC.create()
-
-const publicProcedure = t.procedure
-const router = t.router
+import jobController from './presentation/controller/job-controller'
+import { router } from './trpc'
 
 export const appRouter = router({
-  hello: publicProcedure.input(z.string().nullish()).query(({ input }) => {
-    return `Hello ${input ?? 'World'}!`
-  }),
+  job: jobController
 })
 
 export type AppRouter = typeof appRouter

@@ -8,3 +8,13 @@ wrangler.toml
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+
+npm-debug.log
+yarn-error.log
+
+# Fastify
+.env
+
+# Drazzle
+/build
